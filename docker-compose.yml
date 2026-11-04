@@ -1,0 +1,17 @@
+services:
+  love:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      WHATSAPP_NUMBER: "256748808436"
+      # Set a long random value in production:
+      # SECRET_KEY: "change-me"
+      # Set to "1" once you serve the site over HTTPS:
+      COOKIE_SECURE: "0"
+    volumes:
+      - love-data:/app/instance
+    restart: unless-stopped
+
+volumes:
+  love-data:

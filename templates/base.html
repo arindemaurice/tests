@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101820">
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<meta name="description" content="Love is like coding. A romantic coding-themed poem with a heart-status dashboard.">
+<link rel="icon" href="{{ url_for('static', filename='img/favicon.svg') }}" type="image/svg+xml">
+<title>{% block title %}Love Is Like Coding ❤️{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="{% block body_class %}{% endblock %}">
+<div id="bg-a" class="bg-layer" aria-hidden="true"></div>
+<div id="bg-b" class="bg-layer" aria-hidden="true"></div>
+<div class="bg-shade" aria-hidden="true"></div>
+<canvas id="code-rain" aria-hidden="true"></canvas>
+
+<nav class="topnav">
+  <a class="brand" href="{{ url_for('index') }}">💗 love.js</a>
+  <div class="navlinks">
+    {% if user %}
+      <a href="{{ url_for('dashboard') }}">Dashboard</a>
+      <form method="post" action="{{ url_for('logout') }}" class="inline">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <button class="linklike" type="submit">Log out ({{ user.username }})</button>
+      </form>
+    {% else %}
+      <a href="{{ url_for('login') }}">Log in</a>
+      <a class="pill" href="{{ url_for('register') }}">Create account</a>
+    {% endif %}
+  </div>
+</nav>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  <div class="flashes" role="status">
+    {% for cat, msg in messages %}<div class="flash {{ cat }}">{{ msg }}</div>{% endfor %}
+  </div>
+  {% endif %}
+{% endwith %}
+
+{% block content %}{% endblock %}
+
+<div class="hearts" aria-hidden="true"><span>♥</span><span>♡</span><span>♥</span><span>♡</span><span>♥</span></div>
+<script src="{{ url_for('static', filename='js/common.js') }}"></script>
+<script src="{{ url_for('static', filename='js/background.js') }}"></script>
+<script src="{{ url_for('static', filename='js/code-rain.js') }}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

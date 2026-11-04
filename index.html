@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101820">
+<meta name="description" content="Love is like coding. A romantic coding-themed poem with a heart-status dashboard.">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<title>Love Is Like Coding ❤️</title>
+<link rel="stylesheet" href="css/style.css">
+<style>.err{color:#ffb0aa;min-height:1.2em;margin-top:10px;font-size:13px}#home-video{width:min(100%,700px);border-radius:14px;border:1px solid var(--line)}</style>
+</head>
+<body class="page-home">
+<div id="bg-a" class="bg-layer" aria-hidden="true"></div>
+<div id="bg-b" class="bg-layer" aria-hidden="true"></div>
+<div class="bg-shade" aria-hidden="true"></div>
+<canvas id="code-rain" aria-hidden="true"></canvas>
+<nav class="topnav" id="nav"></nav>
+<main class="stage">
+  <section class="window" aria-label="Animated love poem">
+    <header class="titlebar"><span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span><div class="filename">💗 love.js — My Heart</div></header>
+    <div class="editor" id="editor" aria-live="polite"></div>
+    <footer class="footer"><span>● JavaScript</span><span id="poem-progress">Chapter 1 / 6</span><span>Made with <span class="heart">♥</span> &amp; bugs</span></footer>
+  </section>
+  <video id="home-video" controls playsinline hidden></video>
+  <section class="cta" id="cta" hidden>
+    <h2>Did the code compile in your heart?</h2>
+    <p>If you've fallen in love, there's only one function left to call.</p>
+    <div class="cta-buttons">
+      <a class="btn love" id="wa-link" href="#" target="_blank" rel="noopener noreferrer">💬 I've fallen in love — message me on WhatsApp</a>
+      <button class="btn ghost" id="replay" type="button">↻ Replay poem</button>
+    </div>
+    <p class="small" id="cta-account"></p>
+  </section>
+  <aside class="memories" id="memories" hidden aria-label="Photo memories"><div class="polaroid"><img id="polaroid-img" alt="Memory photo"><span id="polaroid-cap"></span></div></aside>
+</main>
+<div class="hearts" aria-hidden="true"><span>♥</span><span>♡</span><span>♥</span><span>♡</span><span>♥</span></div>
+<script src="js/config.js"></script>
+<script src="js/store.js"></script>
+<script src="js/page.js"></script>
+<script src="js/code-rain.js"></script>
+<script src="js/poem-data.js"></script>
+<script src="js/poem.js"></script>
+</body>
+</html>

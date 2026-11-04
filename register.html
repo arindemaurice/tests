@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101820">
+<meta name="description" content="Love is like coding. A romantic coding-themed poem with a heart-status dashboard.">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<title>Create account · Love Is Like Coding</title>
+<link rel="stylesheet" href="css/style.css">
+<style>.err{color:#ffb0aa;min-height:1.2em;margin-top:10px;font-size:13px}#home-video{width:min(100%,700px);border-radius:14px;border:1px solid var(--line)}</style>
+</head>
+<body class="">
+<div id="bg-a" class="bg-layer" aria-hidden="true"></div>
+<div id="bg-b" class="bg-layer" aria-hidden="true"></div>
+<div class="bg-shade" aria-hidden="true"></div>
+<canvas id="code-rain" aria-hidden="true"></canvas>
+<nav class="topnav" id="nav"></nav>
+<main class="stage"><section class="card auth">
+  <h1>Create account</h1><p class="muted">Take the quiz, track your heart status, and find out how the story ends.</p>
+  <form id="auth-form" data-mode="register" autocomplete="on">
+    <label>Username<input name="username" type="text" required minlength="3" maxlength="24" pattern="[A-Za-z0-9_]+" autocomplete="username"><small>3-24 letters, numbers or underscores</small></label>
+    <label>Email<input name="email" type="email" required maxlength="120" autocomplete="email"></label>
+    <label>Password<input name="password" type="password" required minlength="8" maxlength="128" autocomplete="new-password"><small>At least 8 characters</small></label>
+    <button class="btn love" type="submit">Create account</button><div class="err" id="auth-err" role="alert"></div>
+  </form>
+  <p class="small">Already registered? <a href="login.html">Log in</a></p>
+</section></main>
+<div class="hearts" aria-hidden="true"><span>♥</span><span>♡</span><span>♥</span><span>♡</span><span>♥</span></div>
+<script src="js/config.js"></script>
+<script src="js/store.js"></script>
+<script src="js/page.js"></script>
+<script src="js/code-rain.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

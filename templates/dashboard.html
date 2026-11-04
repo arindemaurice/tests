@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}Heart status · Love Is Like Coding{% endblock %}
+{% block body_class %}page-dash{% endblock %}
+{% block content %}
+<main class="dash" id="dash" data-status='{{ status | tojson }}'>
+  <header class="dash-head">
+    <h1>Hello, {{ user.username }} 👋</h1>
+    <p class="muted">Member since {{ user.created_at[:10] }}</p>
+  </header>
+
+  <section class="card heart-card">
+    <div class="heart-wrap">
+      <svg viewBox="0 0 100 90" class="big-heart" role="img" aria-label="Heart status meter">
+        <defs>
+          <clipPath id="heart-clip"><path d="M50 85 C10 55 0 30 15 15 C28 3 45 8 50 22 C55 8 72 3 85 15 C100 30 90 55 50 85 Z"/></clipPath>
+        </defs>
+        <path d="M50 85 C10 55 0 30 15 15 C28 3 45 8 50 22 C55 8 72 3 85 15 C100 30 90 55 50 85 Z" class="heart-bg"/>
+        <rect id="heart-fill" x="0" y="90" width="100" height="90" clip-path="url(#heart-clip)" class="heart-fg"/>
+      </svg>
+      <div class="score"><span id="score">0</span><small>%</small></div>
+    </div>
+    <div class="heart-info">
+      <h2 id="level">…</h2>
+      <p id="level-msg" class="muted"></p>
+      <canvas id="ecg" width="520" height="90" aria-label="Heartbeat monitor"></canvas>
+      <p class="bpm"><span id="bpm">--</span> BPM</p>
+      <ul class="breakdown">
+        <li>Quiz <b id="b-quiz">0</b>/<span id="b-quiz-max">60</span></li>
+        <li>Poem finished <b id="b-poem">0</b>/<span id="b-poem-max">20</span> <small>(<span id="reads">0</span> reads)</small></li>
+        <li>Declared in love <b id="b-decl">0</b>/<span id="b-decl-max">20</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Heart quiz</h2>
+    <p class="muted">Answer honestly — your heart status updates instantly.</p>
+    <form id="quiz-form">
+      {% for item in quiz %}
+      {% set qi = loop.index0 %}
+      <fieldset>
+        <legend>{{ loop.index }}. {{ item.q }}</legend>
+        {% for opt in item.a %}
+        <label class="opt"><input type="radio" name="q{{ qi }}" value="{{ loop.index0 }}" required> {{ opt }}</label>
+        {% endfor %}
+      </fieldset>
+      {% endfor %}
+      <button class="btn love" type="submit">Update heart status</button>
+      <span id="quiz-msg" class="small" role="status"></span>
+    </form>
+  </section>
+
+  <section class="card cta-card">
+    <h2>Fallen in love?</h2>
+    <p>Tap below to declare it (+20 points) and open WhatsApp with a ready-made message.</p>
+    <button class="btn love" id="declare" type="button">❤️ I've fallen in love — open WhatsApp</button>
+    <p class="small">Opens <a id="wa-direct" href="{{ whatsapp_link }}" target="_blank" rel="noopener noreferrer">your WhatsApp chat link</a> in a new tab.</p>
+  </section>
+
+  <p class="small"><a href="{{ url_for('index') }}">← Back to the poem</a></p>
+</main>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

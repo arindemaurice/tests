@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101820">
+<meta name="description" content="Love is like coding. A romantic coding-themed poem with a heart-status dashboard.">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<title>Log in · Love Is Like Coding</title>
+<link rel="stylesheet" href="css/style.css">
+<style>.err{color:#ffb0aa;min-height:1.2em;margin-top:10px;font-size:13px}#home-video{width:min(100%,700px);border-radius:14px;border:1px solid var(--line)}</style>
+</head>
+<body class="">
+<div id="bg-a" class="bg-layer" aria-hidden="true"></div>
+<div id="bg-b" class="bg-layer" aria-hidden="true"></div>
+<div class="bg-shade" aria-hidden="true"></div>
+<canvas id="code-rain" aria-hidden="true"></canvas>
+<nav class="topnav" id="nav"></nav>
+<main class="stage"><section class="card auth">
+  <h1>Log in</h1><p class="muted">Welcome back. Your heart status is waiting.</p>
+  <form id="auth-form" data-mode="login" autocomplete="on">
+    <label>Username or email<input name="identity" type="text" required autocomplete="username" maxlength="120"></label>
+    <label>Password<input name="password" type="password" required autocomplete="current-password" maxlength="128"></label>
+    <button class="btn love" type="submit">Log in</button><div class="err" id="auth-err" role="alert"></div>
+  </form>
+  <p class="small">New here? <a href="register.html">Create an account</a></p>
+</section></main>
+<div class="hearts" aria-hidden="true"><span>♥</span><span>♡</span><span>♥</span><span>♡</span><span>♥</span></div>
+<script src="js/config.js"></script>
+<script src="js/store.js"></script>
+<script src="js/page.js"></script>
+<script src="js/code-rain.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

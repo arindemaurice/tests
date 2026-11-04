@@ -1,0 +1,71 @@
+window.POEM = {
+ "title": "love.js",
+ "markup": "[[color|text]] colours: blue purple red yellow green gray",
+ "stanzas": [
+  [
+   "[[gray|// Initializing feelings...]]",
+   "Loving her was like [[blue|coding.]]",
+   "",
+   "Easy at first.",
+   "Then came the [[purple|updates.]]",
+   "New mood.",
+   "New rules.",
+   "Random [[red|errors.]] 💀",
+   "[[red|No documentation.]] 💀",
+   "",
+   "I tried [[yellow|debugging everything...]]",
+   "Then I realized —",
+   "some [[blue|code]] isn't meant to be understood.",
+   "You just run it",
+   "and hope for the best. 😂❤️"
+  ],
+  [
+   "[[gray|// Chapter 2: the refactor]]",
+   "So I closed the old repo,",
+   "[[purple|git]] [[red|branch]] --[[yellow|heal]],",
+   "and learned to read my own logs",
+   "without flinching at the [[red|stack trace]].",
+   "Pain was only a [[blue|function]]",
+   "I kept calling in a loop",
+   "until I found the [[green|base case]]. 🌱"
+  ],
+  [
+   "[[gray|// Chapter 3: you]]",
+   "Then you arrived like a clean [[blue|commit]],",
+   "no merge conflicts,",
+   "no [[red|breaking changes]],",
+   "a [[yellow|README]] that read like morning",
+   "and a [[purple|syntax]] my heart could parse.",
+   "",
+   "You laughed — and every [[red|null]]",
+   "became a [[blue|value]].",
+   "You smiled — and the whole build [[green|passed]]. ✅"
+  ],
+  [
+   "[[gray|// Chapter 4: runtime]]",
+   "[[purple|while]] (you.[[blue|exist]]) {",
+   "   heart.[[yellow|beat]]();",
+   "   hope[[red|++]];",
+   "   fear[[red|--]];",
+   "}",
+   "[[gray|// no exit condition. no regrets.]] 💓"
+  ],
+  [
+   "[[gray|// Chapter 5: deploy]]",
+   "I won't promise zero [[red|bugs]].",
+   "I'll promise [[yellow|patches]],",
+   "late-night [[blue|debugging]] side by side,",
+   "and a love with [[green|version control]]:",
+   "every yesterday saved,",
+   "every tomorrow a [[purple|new branch]]. 🌿"
+  ],
+  [
+   "[[gray|// Final chapter: the if statement]]",
+   "[[purple|if]] (your.heart == [[yellow|\"yes\"]]) {",
+   "   [[blue|message]](me);   [[gray|// you know where to find me]]",
+   "}",
+   "",
+   "[[green|// Somehow, we're still in production ❤️]]"
+  ]
+ ]
+};

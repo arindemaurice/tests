@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block body_class %}page-home{% endblock %}
+{% block content %}
+<main class="stage">
+  <section class="window" aria-label="Animated love poem">
+    <header class="titlebar">
+      <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>
+      <div class="filename">💗 love.js — My Heart</div>
+    </header>
+    <div class="editor" id="editor" aria-live="polite"></div>
+    <footer class="footer">
+      <span>● JavaScript</span>
+      <span id="poem-progress">Chapter 1 / 6</span>
+      <span>Made with <span class="heart">♥</span> &amp; bugs</span>
+    </footer>
+  </section>
+
+  <section class="cta" id="cta" hidden>
+    <h2>Did the code compile in your heart?</h2>
+    <p>If you've fallen in love, there's only one function left to call.</p>
+    <div class="cta-buttons">
+      <a class="btn love" id="wa-link" href="{{ whatsapp_link }}" target="_blank" rel="noopener noreferrer">
+        💬 I've fallen in love — message me on WhatsApp
+      </a>
+      <button class="btn ghost" id="replay" type="button">↻ Replay poem</button>
+    </div>
+    {% if not user %}
+    <p class="small">Want to track your heart status?
+      <a href="{{ url_for('register') }}">Create an account</a> or <a href="{{ url_for('login') }}">log in</a>.</p>
+    {% else %}
+    <p class="small"><a href="{{ url_for('dashboard') }}">Open your dashboard →</a></p>
+    {% endif %}
+  </section>
+
+  <aside class="memories" id="memories" hidden aria-label="Photo memories">
+    <div class="polaroid" id="polaroid"><img id="polaroid-img" alt="Memory photo"><span id="polaroid-cap"></span></div>
+  </aside>
+</main>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/poem.js') }}"></script>
+{% endblock %}

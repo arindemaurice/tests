@@ -1,0 +1,13 @@
+{
+  "name": "Love Is Like Coding",
+  "whatsapp": {
+    "number_local": "0748808436",
+    "number_international": "256748808436",
+    "note": "The app reads WHATSAPP_NUMBER (international format, digits only). Change it with an environment variable; this file is documentation."
+  },
+  "languages": ["Python", "JavaScript", "HTML", "CSS", "SQL", "Bash", "Batch", "JSON", "YAML", "Dockerfile", "SVG", "Markdown"],
+  "folders": {
+    "backgrounds": "static/img/bg",
+    "your_photos": "static/img/people"
+  }
+}
